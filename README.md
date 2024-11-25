@@ -9,34 +9,29 @@ Follow these steps to get the project up and running on your local environment:
 ### Prerequisites
 
 Make sure you have Python and PostgreSQL installed on your system.
+    ```
+    sudo apt-get install python3.12-venv
+    python3.12 -m venv .venv
+    source .venv/bin/activate
+    sudo apt-get install build-essential libpq-dev python3.12-dev
+    pip install -r requirements.txt
+    ```
 
 ### Installation
 
-1. Clone the repository to your local machine:
-
-    ```
-    git clone https://github.com/yourusername/django-crud-example.git
-    ```
-
-2. Change to the project directory:
-
-    ```
-    cd django-crud-example
-    ```
-
-3. Install the project dependencies using pip:
+1. Install the project dependencies using pip:
 
     ```
     pip install -r requirements.txt
     ```
 
-4. Create the PostgreSQL database by running migrations:
+2. Create the PostgreSQL database by running migrations:
 
     ```
     python manage.py migrate
     ```
 
-5. Start the development server:
+3. Start the development server:
 
     ```
     python manage.py runserver
@@ -52,10 +47,6 @@ Follow the prompts to set up your admin account, and then you can access the adm
 ## Usage
 
 You can use this CRUD application as a foundation for building your own web applications. It provides basic Create, Read, Update, and Delete functionality that can be extended and customized to suit your specific needs.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
