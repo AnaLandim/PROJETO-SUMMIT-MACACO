@@ -7,17 +7,18 @@
     <div class="row">
         <div class="col-12">
             <ul class="list-group">
-              <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
-              <li class="list-group-item"><strong>Description:</strong> {{ object.description }}</li>
-              <li class="list-group-item"><strong>Price:</strong> {{ object.price }}</li>
+              <li class="list-group-item"><strong>Nome:</strong> {{ object.name }}</li>
+              <li class="list-group-item"><strong>Idade:</strong> {{ object.age }}</li>
+              <li class="list-group-item"><strong>Telefone:</strong> {{ object.phone }}</li>
+              <li class="list-group-item"><strong>Email:</strong> {{ object.email }}</li>
             </ul>
         </div>
     </div>
 
     <div class="row top-buffer">
         <div class="col-12">
-                <a href="{% url 'student_edit' object.id %}"><button type="button" class="btn btn-success">Edit</button></a>
-                <a href="{% url 'student_list' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+                <a href="{% url 'student_edit' object.id %}"><button type="button" class="btn btn-success">Editar</button></a>
+                <a href="{% url 'student_list' %}"><button type="button" class="btn btn-secondary">Voltar</button></a>
         </div>
     </div>
 {% endblock %}

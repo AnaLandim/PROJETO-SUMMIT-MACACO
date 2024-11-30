@@ -1,8 +1,8 @@
 {% extends 'students/base.html' %}
 
 {% block content %}
-    <h1 class="my-4">{% if request.path == '/new' %} New Student {% else %} Edit - {% endif %}
-        {% if request.path != '/new' %}<small>{{ student.name }}</small>{% endif %}
+    <h1 class="my-4">{% if request.path == '/new' %} New Check-in {% else %} Edit - {% endif %}
+        {% if request.path != '/new' %}<small>{{ entry.id }}</small>{% endif %}
     </h1>
     <div class="row">
         <div class="col-12">
@@ -15,7 +15,7 @@
                     </div>
                 {% endfor %}
                 <input type="submit" {% if request.path == '/new' %} value="Add" {% else %} value="Update" {% endif %} class="btn btn-success"/>
-                <a href="{% url 'student_list' %}"><button type="button" class="btn btn-secondary">Voltar</button></a>
+                <a href="{% url 'entry_list' %}"><button type="button" class="btn btn-secondary">Voltar</button></a>
             </form>
         </div>
     </div>

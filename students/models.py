@@ -5,6 +5,7 @@ from schools.models import School
 
 class Student(models.Model):
     id = models.AutoField('id', primary_key=True)
+    ra = models.CharField("RA", unique=True, max_length=100, null=True)
     name = models.CharField('Name', max_length=100)
     age = models.IntegerField('Age')
     phone = models.CharField('Phone', max_length=15)
@@ -19,4 +20,4 @@ class Student(models.Model):
         db_table = 'students'
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.ra}"

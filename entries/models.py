@@ -19,4 +19,4 @@ class Entry(models.Model):
         db_table = 'entries'
 
     def __str__(self):
-        return self.id
+        return str(self.id)

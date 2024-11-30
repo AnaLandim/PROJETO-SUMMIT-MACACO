@@ -1,0 +1,23 @@
+{% extends 'students/base.html' %}
+
+{% block content %}
+<h1 class="my-4">Detail -
+    <small>{{ object.name }}</small>
+</h1>
+<div class="row">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>ID:</strong> {{ object.id }}</li>
+            <li class="list-group-item"><strong>Aluno:</strong> {{ object.student }}</li>
+            <li class="list-group-item"><strong>Entrou em:</strong> {{ object.entered_at }}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row top-buffer">
+    <div class="col-12">
+        <a href="{% url 'entry_edit' object.id %}"><button type="button" class="btn btn-success">Editar</button></a>
+        <a href="{% url 'entry_list' %}"><button type="button" class="btn btn-secondary">Voltar</button></a>
+    </div>
+</div>
+{% endblock %}

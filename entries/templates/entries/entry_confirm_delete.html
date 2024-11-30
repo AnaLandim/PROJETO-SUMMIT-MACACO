@@ -1,7 +1,7 @@
 {% extends 'students/base.html' %}
 
 {% block content %}
-    <h1 class="my-4">Deletar -
+    <h1 class="my-4">Delete -
         <small>{{ object }}</small>
     </h1>
     <div class="row">
@@ -12,7 +12,7 @@
                   Tem certeza de que deseja deletar {{ object }}?
                 </div>
                 <input type="submit" class="btn btn-info" value="Sim, deletar" />
-                <a class="btn btn-success" href="{% url 'student_list' %}">Não, eu só cliquei no botão de deletar</a>
+                <a class="btn btn-success" href="{% url 'entry_list' %}">Não, eu só testei o botão de deletar</a>
             </form>
         </div>
     </div>

@@ -7,6 +7,11 @@ from .models import Student
 class StudentForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(StudentForm, self).__init__(*args, **kwargs)
+        self.fields['ra'].widget.attrs = {
+            'class': 'form-control col-md-6',
+            'step': 'any',
+            'min': '1',
+        }
         self.fields['name'].widget.attrs = {
             'class': 'form-control col-md-6'
         }
@@ -24,4 +29,4 @@ class StudentForm(forms.ModelForm):
 
     class Meta:
         model = Student
-        fields = ('name', 'age', 'phone', 'email')
+        fields = ('ra', 'name', 'age', 'phone', 'email')

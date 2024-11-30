@@ -18,17 +18,16 @@ class StudentCreate(SuccessMessageMixin, CreateView):
     model = Student
     form_class = StudentForm
     success_url = reverse_lazy('student_list')
-    success_message = "Student successfully created!"
+    success_message = "Aluno criado com sucesso!"
 
 class StudentUpdate(SuccessMessageMixin, UpdateView): 
     model = Student
     form_class = StudentForm
     success_url = reverse_lazy('student_list')
-    success_message = "Student successfully updated!"
+    success_message = "Aluno atualizado com sucesso!"
 
 class StudentDelete(SuccessMessageMixin, DeleteView):
     model = Student
     success_url = reverse_lazy('student_list')
-    success_message = "Student successfully deleted!"
-
+    success_message = "Aluno excluído com sucesso!"
 

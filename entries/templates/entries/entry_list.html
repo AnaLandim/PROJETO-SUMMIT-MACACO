@@ -1,0 +1,49 @@
+{% extends 'students/base.html' %}
+
+{% block content %}
+    <h1 class="my-4">
+        <small>Check-in Lista</small>
+        <a href="{% url 'entry_new' %}" class="btn btn-success">Adicionar Check-in</a>
+    </h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row">
+    {% if object_list %}
+        <div class="col-12" style="overflow-x: scroll">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Aluno</th>
+                    <th scope="col">Entered At</th>
+                    <th scope="col">View</th>
+                    <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for entry in object_list %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td>{{ entry.student }}</td>
+                    <td>{{ entry.entered_at }}</td>
+                    <td><a href="{% url 'entry_view' entry.id %}"><button type="button" class="btn btn-outline-primary btn-sm">Ver</button></a></td>
+                    <td><a href="{% url 'entry_delete' entry.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Deletar</button></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            Ainda não há entradas. Mas se você quiser, pode adicionar uma <a class="badge badge-info" href="{% url 'entry_new' %}"><strong>aqui.</strong></a>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+{% endblock %}

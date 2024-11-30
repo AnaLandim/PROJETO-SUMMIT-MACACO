@@ -2,7 +2,8 @@
 
 {% block content %}
     <h1 class="my-4">
-        <small>Student List</small>
+        <small>Lista Alunos</small>
+        <a href="{% url 'student_new' %}" class="btn btn-success">Adicionar Alunos</a>
     </h1>
     {% if messages %}
         {% for message in messages %}
@@ -17,9 +18,10 @@
             <table class="table">
               <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Email</th>
                     <th scope="col">View</th>
                     <th scope="col">Delete</th>
                 </tr>
@@ -28,10 +30,11 @@
                 {% for student in object_list %}
                 <tr>
                     <td>{{ student.name }}</td>
-                    <td>{{ student.description }}</td>
-                    <td>{{ student.price }}</td>
-                    <td><a href="{% url 'student_view' student.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
-                    <td><a href="{% url 'student_delete' student.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Delete</button></a></td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.phone }}</td>
+                    <td>{{ student.email }}</td>
+                    <td><a href="{% url 'student_view' student.id %}"><button type="button" class="btn btn-outline-primary btn-sm">Ver</button></a></td>
+                    <td><a href="{% url 'student_delete' student.id %}"><button type="button" class="btn btn-outline-danger btn-sm">Deletar</button></a></td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -40,7 +43,7 @@
     {% else %}
     <div class="col-12">
         <div class="alert alert-warning" role="alert">
-            There is no student, yet. But if you want, you can add from <a class="badge badge-info" href="{% url 'student_new' %}"><strong>here.</strong></a>
+            Ainda não há nenhum aluno. Mas se você quiser, pode adicionar a partir de <a class="badge badge-info" href="{% url 'student_new' %}"><strong>aqui.</strong></a>
         </div>
     </div>
     {% endif %}
