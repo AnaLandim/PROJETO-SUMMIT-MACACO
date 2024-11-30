@@ -1,22 +1,22 @@
 from django.db import models
 
 from schools.models import School
+from students.models import Student
 
 
-class Student(models.Model):
+class Entry(models.Model):
     id = models.AutoField('id', primary_key=True)
-    name = models.CharField('Name', max_length=100)
-    age = models.IntegerField('Age')
-    phone = models.CharField('Phone', max_length=15)
-    email = models.EmailField('Email', max_length=100)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True)
     school = models.ForeignKey(School, on_delete=models.CASCADE, null=True, blank=True)
+
+    entered_at = models.DateTimeField('Entered at')
 
     created_at = models.DateTimeField('Created at', auto_now_add=True)
     updated_at = models.DateTimeField('Updated at', auto_now=True)
 
     class Meta:
-        ordering = ['name']
-        db_table = 'students'
+        ordering = ['id']
+        db_table = 'entries'
 
     def __str__(self):
-        return self.name
+        return self.id
