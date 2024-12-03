@@ -10,10 +10,9 @@ Follow these steps to get the project up and running on your local environment:
 
 Make sure you have Python and PostgreSQL installed on your system.
     ```
-    sudo apt-get install python3.12-venv
+    sudo apt-get install build-essential libpq-dev python3.12-dev python3.12-venv -y
     python3.12 -m venv .venv
     source .venv/bin/activate
-    sudo apt-get install build-essential libpq-dev python3.12-dev
     pip install -r requirements.txt
     ```
 
