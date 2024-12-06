@@ -1,6 +1,6 @@
-# Muay Thai School
+# PROJETO SUMMIT MACACO
 
-This is a straightforward CRUD (Create, Read, Update, Delete) application built with Django 4, Bootstrap 4, and PostgreSQL.
+Here are available the codes used to create the website for the NGO Summit Macaco
 
 ## Getting Started
 
@@ -43,14 +43,9 @@ To access the Django admin panel, you'll need to create a superuser account:
 
 Follow the prompts to set up your admin account, and then you can access the admin panel at `/admin`.
 
-## Usage
 
-You can use this CRUD application as a foundation for building your own web applications. It provides basic Create, Read, Update, and Delete functionality that can be extended and customized to suit your specific needs.
-
-## Acknowledgments
 
 - Django - The web framework used
 - Bootstrap - The front-end framework used
 - PostgreSQL - The database system used
 
-Feel free to customize and expand upon this project to create your own Django-based web applications. If you have any questions or run into any issues, please refer to the project's [GitHub Issues](https://github.com/yourusername/django-crud-example/issues) for assistance.
